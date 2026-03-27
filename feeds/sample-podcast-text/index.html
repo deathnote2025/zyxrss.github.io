@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Podcast Text</title>
+  <style>
+    :root {
+      --bg: #f7f0e8;
+      --card: rgba(255, 255, 255, 0.9);
+      --line: rgba(31, 41, 55, 0.12);
+      --text: #172030;
+      --muted: #5d6878;
+      --accent: #9f3e16;
+      --accent-soft: #fff6ef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 16px 42px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(159, 62, 22, 0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(3, 105, 161, 0.12), transparent 26%),
+        linear-gradient(180deg, #fcf8f3 0%, #efe4d7 100%);
+      font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    main {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: 0 24px 78px rgba(31, 41, 55, 0.12);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .cover {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--accent-soft);
+    }
+
+    .cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      line-height: 0.98;
+    }
+
+    p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .links,
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .button,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+
+    .button {
+      padding: 12px 16px;
+      background: var(--accent);
+      color: #fff8f2;
+      font-weight: 700;
+    }
+
+    .button.alt {
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 247, 240, 0.92);
+      color: var(--accent);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .entry {
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 250, 244, 0.88);
+    }
+
+    .entry h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .entry .date {
+      margin-top: 8px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .entry p {
+      margin-top: 12px;
+    }
+
+    .resource-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .cover {
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="cover">
+        <img src="./cover.jpg" alt="Sample Podcast Text cover">
+      </div>
+      <div>
+        <h1>Sample Podcast Text</h1>
+        <p>
+          这是一个纯文本 RSS 示例频道，用来演示不带音频资源时的最小发布方式。
+          它适合文章更新、简讯、摘要流和知识摘录类内容，重点是稳定的 `feed.xml`
+          和一个给人阅读的频道页。
+        </p>
+        <div class="links">
+          <a class="button" href="./feed.xml">订阅 RSS</a>
+          <a class="button alt" href="../">返回频道索引</a>
+        </div>
+        <div class="meta">
+          <span class="pill">Slug: sample-podcast-text</span>
+          <span class="pill">Text-only RSS</span>
+          <span class="pill">No audio directory</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Recent Posts</h2>
+
+      <article class="entry">
+        <h3>Issue 001: Text Feed Structure</h3>
+        <div class="date">2026-03-27</div>
+        <p>
+          纯文本 RSS 最小可用结构只需要稳定的 `feed.xml`、公开可访问的条目链接、
+          清晰的 `title` 和 `description`。如果没有音频文件，就不必引入 `audio/` 目录。
+        </p>
+      </article>
+
+      <article class="entry">
+        <h3>Issue 002: Human Page vs Machine Feed</h3>
+        <div class="date">2026-03-27</div>
+        <p>
+          频道页负责让人浏览和理解这个栏目，`feed.xml` 负责给 RSS 客户端读取。
+          两者分开维护，可以让链接更稳定，也更容易排查发布问题。
+        </p>
+      </article>
+
+      <article class="entry">
+        <h3>Issue 003: Stable URLs Matter</h3>
+        <div class="date">2026-03-27</div>
+        <p>
+          一旦外部客户端订阅了 `feed.xml`，频道 slug 和主 feed 文件名最好就不要再改。
+          对文本流来说，最重要的不是复杂功能，而是持续稳定地输出内容。
+        </p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Resources</h2>
+      <ul class="resource-list">
+        <li><a href="./feed.xml">RSS feed.xml</a></li>
+        <li><a href="./cover.jpg">Cover image</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
