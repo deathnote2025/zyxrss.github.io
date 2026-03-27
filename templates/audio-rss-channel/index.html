@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{CHANNEL_TITLE}}</title>
+  <style>
+    :root {
+      --bg: #f9f3eb;
+      --card: rgba(255, 255, 255, 0.9);
+      --line: rgba(31, 41, 55, 0.12);
+      --text: #172030;
+      --muted: #596577;
+      --accent: #b45309;
+      --accent-dark: #8a3900;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 26px 16px 40px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(180, 83, 9, 0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(2, 132, 199, 0.14), transparent 26%),
+        linear-gradient(180deg, #fdf9f4 0%, #f0e5d7 100%);
+      font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    main {
+      width: min(960px, 100%);
+      margin: 0 auto;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: 0 24px 80px rgba(31, 41, 55, 0.12);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .cover {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 244, 0.8);
+    }
+
+    .cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      line-height: 0.98;
+    }
+
+    p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .links,
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .button,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+
+    .button {
+      padding: 12px 16px;
+      background: var(--accent);
+      color: #fff8f1;
+      font-weight: 700;
+    }
+
+    .button.alt {
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      color: var(--accent-dark);
+      background: rgba(255, 248, 240, 0.9);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .episode {
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 251, 246, 0.88);
+    }
+
+    .episode h3 {
+      margin: 0;
+      font-size: 1.06rem;
+    }
+
+    .episode p {
+      margin-top: 10px;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 14px;
+    }
+
+    .resource-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    a { color: inherit; }
+
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; }
+      .cover { max-width: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="cover">
+        <img src="./cover.jpg" alt="{{CHANNEL_TITLE}} cover">
+      </div>
+      <div>
+        <h1>{{CHANNEL_TITLE}}</h1>
+        <p>{{CHANNEL_DESCRIPTION}}</p>
+        <div class="links">
+          <a class="button" href="./feed.xml">订阅 RSS</a>
+          <a class="button alt" href="./audio/{{EPISODE_FILE}}">打开音频文件</a>
+          <a class="button alt" href="../">返回频道索引</a>
+        </div>
+        <div class="meta">
+          <span class="pill">Slug: {{CHANNEL_SLUG}}</span>
+          <span class="pill">Audio RSS</span>
+          <span class="pill">Apple-aware metadata</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Latest Episode</h2>
+      <article class="episode">
+        <h3>{{EPISODE_TITLE}}</h3>
+        <p>{{EPISODE_SUMMARY}}</p>
+        <audio controls preload="none">
+          <source src="./audio/{{EPISODE_FILE}}" type="audio/mpeg">
+        </audio>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Resources</h2>
+      <ul class="resource-list">
+        <li><a href="./feed.xml">RSS feed.xml</a></li>
+        <li><a href="./cover.jpg">Cover image</a></li>
+        <li><a href="./audio/{{EPISODE_FILE}}">Audio file</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

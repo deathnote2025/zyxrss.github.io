@@ -31,7 +31,11 @@ including both normal RSS feeds and podcast-style RSS feeds with audio files.
 
 ```text
 /
+  AGENTS.md
   index.html
+  templates/
+    text-rss-channel/
+    audio-rss-channel/
   feeds/
     channel-slug/
       index.html
@@ -115,6 +119,13 @@ Apple Podcasts compatibility notes:
 - If Apple artwork refresh is delayed, changing the filename can help break remote cache assumptions.
 
 ## Manual Maintenance Workflow
+
+### Recommended authoring scaffolding
+
+- Keep repo-wide instructions in the repo root `AGENTS.md`.
+- Keep channel-specific instructions in a channel-local `AGENTS.md` when a channel has special update rules.
+- Use `templates/text-rss-channel/` as the starting point for new text channels.
+- Use `templates/audio-rss-channel/` as the starting point for new audio channels.
 
 ### Add a new channel
 

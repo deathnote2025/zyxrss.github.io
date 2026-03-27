@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{CHANNEL_TITLE}}</title>
+    <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/{{CHANNEL_SLUG}}/</link>
+    <description>{{CHANNEL_DESCRIPTION}}</description>
+    <language>zh-cn</language>
+    <lastBuildDate>{{PUB_DATE_RFC822}}</lastBuildDate>
+    <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/{{CHANNEL_SLUG}}/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://deathnote2025.github.io/zyxrss.github.io/feeds/{{CHANNEL_SLUG}}/cover.jpg</url>
+      <title>{{CHANNEL_TITLE}}</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/{{CHANNEL_SLUG}}/</link>
+    </image>
+    <item>
+      <title>{{POST_TITLE}}</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/{{CHANNEL_SLUG}}/posts/{{POST_SLUG}}.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/{{CHANNEL_SLUG}}/posts/{{POST_SLUG}}.html</guid>
+      <pubDate>{{PUB_DATE_RFC822}}</pubDate>
+      <description>{{POST_SUMMARY}}</description>
+    </item>
+  </channel>
+</rss>
