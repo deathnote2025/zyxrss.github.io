@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>doublea</title>
+  <style>
+    :root {
+      --bg: #f9f3eb;
+      --card: rgba(255, 255, 255, 0.9);
+      --line: rgba(31, 41, 55, 0.12);
+      --text: #172030;
+      --muted: #596577;
+      --accent: #b45309;
+      --accent-dark: #8a3900;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 26px 16px 40px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(180, 83, 9, 0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(2, 132, 199, 0.14), transparent 26%),
+        linear-gradient(180deg, #fdf9f4 0%, #f0e5d7 100%);
+      font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    main {
+      width: min(960px, 100%);
+      margin: 0 auto;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: 0 24px 80px rgba(31, 41, 55, 0.12);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .cover {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 244, 0.8);
+    }
+
+    .cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      line-height: 0.98;
+    }
+
+    p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .links,
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .button,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+
+    .button {
+      padding: 12px 16px;
+      background: var(--accent);
+      color: #fff8f1;
+      font-weight: 700;
+    }
+
+    .button.alt {
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      color: var(--accent-dark);
+      background: rgba(255, 248, 240, 0.9);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .episode {
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 251, 246, 0.88);
+    }
+
+    .episode h3 {
+      margin: 0;
+      font-size: 1.06rem;
+    }
+
+    .episode p {
+      margin-top: 10px;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 14px;
+    }
+
+    .resource-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    a { color: inherit; }
+
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; }
+      .cover { max-width: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="cover">
+        <img src="./cover.jpg" alt="doublea cover">
+      </div>
+      <div>
+        <h1>doublea</h1>
+        <p>doublea 关注亲子成长、自驱力与教育心理，用可执行的方法拆解奖励、习惯与学习动力背后的底层逻辑。</p>
+        <div class="links">
+          <a class="button" href="./feed.xml">订阅 RSS</a>
+          <a class="button alt" href="./episodes/episode-001-design-effective-rewards.html">打开本期详情</a>
+          <a class="button alt" href="./audio/episode-001-design-effective-rewards.mp3">打开音频文件</a>
+          <a class="button alt" href="../">返回频道索引</a>
+        </div>
+        <div class="meta">
+          <span class="pill">Slug: doublea</span>
+          <span class="pill">Audio RSS</span>
+          <span class="pill">Apple Podcasts Ready</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Latest Episode</h2>
+      <article class="episode">
+        <h3><a href="./episodes/episode-001-design-effective-rewards.html">设计有效的奖励：从斯金纳到自律</a></h3>
+        <p>
+          这期围绕“奖励到底该怎么用”展开，重点不是把奖励做成控制工具，而是让它成为帮助孩子建立内在秩序的脚手架。
+          节目从德西效应、斯金纳强化理论和自我决定理论切入，落到可以直接拿来用的规则设计与反馈方式。
+        </p>
+        <audio controls preload="none">
+          <source src="./audio/episode-001-design-effective-rewards.mp3" type="audio/mpeg">
+        </audio>
+        <p><a href="./episodes/episode-001-design-effective-rewards.html">查看本期完整提要</a></p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Episode Highlights</h2>
+      <ul class="resource-list">
+        <li>不当奖励可能触发德西效应，把“我想做”变成“我只是为了奖励才做”。</li>
+        <li>变比率强化比机械兑现更容易保持兴趣和期待感。</li>
+        <li>长期自驱力的核心是自主感、胜任感和归属感，而不是奖品本身。</li>
+        <li>奖励不能做成交易，重点是确认努力、反馈过程、帮助孩子建立内心秩序。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Channel Positioning</h2>
+      <p>
+        doublea 面向关注亲子成长、自律培养和教育心理的听众。频道会持续用简洁、可落地的方式，
+        拆解学习动力、行为塑造、习惯建立与家庭沟通中的关键问题。
+      </p>
+      <p>
+        当前频道按 Apple Podcasts 兼容方式维护：公开 RSS、JPEG 封面、MP3 enclosure，以及每期独立详情页。
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Resources</h2>
+      <ul class="resource-list">
+        <li><a href="./feed.xml">RSS feed.xml</a></li>
+        <li><a href="./cover.jpg">Cover image</a></li>
+        <li><a href="./episodes/episode-001-design-effective-rewards.html">Episode detail page</a></li>
+        <li><a href="./audio/episode-001-design-effective-rewards.mp3">Audio file</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
