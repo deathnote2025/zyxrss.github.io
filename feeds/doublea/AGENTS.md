@@ -19,7 +19,7 @@ This file governs AI work inside `feeds/doublea/`.
 
 - `index.html`
 - `feed.xml`
-- `cover.jpg`
+- `cover.jpg` or a rotated filename such as `cover-20260327.jpg`
 - `episodes/*.html`
 - `audio/*.mp3`
 
