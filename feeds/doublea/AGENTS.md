@@ -19,6 +19,7 @@ This file governs AI work inside `feeds/doublea/`.
 
 - `index.html`
 - `feed.xml`
+- `apple-feed.xml`
 - `cover.jpg` or a rotated filename such as `cover-20260327.jpg`
 - `episodes/*.html`
 - `audio/*.mp3`
@@ -30,11 +31,12 @@ When adding a new episode:
 2. Measure the real file size in bytes and duration with `ffprobe`.
 3. Create a standalone episode page under `episodes/`.
 4. Add a new `<item>` at the top of `feed.xml`.
-5. Point the item `link` and `guid` to the episode page, and point `enclosure` to the real MP3 URL.
-6. Keep all older `<item>` entries below it in reverse chronological order; do not reorder older entries arbitrarily.
-7. Update `index.html` so the newest episode appears first.
-8. If there is already more than one episode, keep the older episode list below the newest one in reverse chronological order.
-9. If the channel list changed, update the repo root `index.html` and `feeds/index.html` manually.
+5. Mirror the same channel metadata and item list into `apple-feed.xml`; only the `atom:link rel="self"` URL should differ.
+6. Point each item `link` and `guid` to the episode page, and point `enclosure` to the real MP3 URL.
+7. Keep all older `<item>` entries below the newest one in reverse chronological order; do not reorder older entries arbitrarily.
+8. Update `index.html` so the newest episode appears first.
+9. If there is already more than one episode, keep the older episode list below the newest one in reverse chronological order.
+10. If the channel list changed, update the repo root `index.html` and `feeds/index.html` manually.
 
 ## Apple Podcasts Notes
 
@@ -45,6 +47,7 @@ When adding a new episode:
 - Do not replace published media or artwork URLs casually once clients may have cached them.
 - If artwork needs to refresh in Apple Podcasts, publish it under a new filename such as `cover-20260327.jpg` and update `feed.xml` plus `index.html`; do not rely on overwriting the old file in place.
 - Episode artwork is optional; Apple can use the channel cover when item-level artwork is absent.
+- `apple-feed.xml` exists specifically to give Apple Podcasts a stable fallback URL if `feed.xml` is stuck behind client-side or platform-side cache.
 
 ## Content Rules
 

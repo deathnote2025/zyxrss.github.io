@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>doublea</title>
+    <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
+    <description>doublea 是一个不设主题边界的个人播客。最近看了什么、想到什么、想展开聊什么，就更新什么。</description>
+    <itunes:author>doublea</itunes:author>
+    <itunes:type>episodic</itunes:type>
+    <itunes:summary>doublea 是一个不设主题边界的个人播客。最近看了什么、想到什么、想展开聊什么，就更新什么。</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Education" />
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 27 Mar 2026 22:40:12 +0800</lastBuildDate>
+    <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/apple-feed.xml" rel="self" type="application/rss+xml" />
+    <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
+    <image>
+      <url>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg</url>
+      <title>doublea</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
+    </image>
+    <item>
+      <title>设计有效的奖励：从斯金纳到自律</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-001-design-effective-rewards.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-001-design-effective-rewards.html</guid>
+      <pubDate>Fri, 27 Mar 2026 21:22:17 +0800</pubDate>
+      <description><![CDATA[
+        <p>这期从德西效应、斯金纳强化理论与自我决定理论出发，讨论如何让奖励从交易工具变成帮助孩子建立内在秩序的脚手架。</p>
+        <ul>
+          <li>为什么不当奖励会破坏原本存在的学习意愿</li>
+          <li>为什么“变比率强化”更容易维持积极性</li>
+          <li>如何通过自主感、胜任感、归属感培养自驱力</li>
+          <li>为什么应该更多奖励过程，而不是只盯结果</li>
+        </ul>
+      ]]></description>
+      <itunes:duration>07:29</itunes:duration>
+      <itunes:episode>1</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-001-design-effective-rewards.mp3"
+                 length="1911656"
+                 type="audio/mpeg" />
+    </item>
+  </channel>
+</rss>
