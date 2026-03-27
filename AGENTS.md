@@ -25,6 +25,7 @@ This file governs AI work for the whole repository.
 
 ## Where To Start
 
+- Prefer using `scripts/init_channel.sh` to initialize new channels from templates.
 - For a new text channel, copy `templates/text-rss-channel/` into `feeds/<channel-slug>/`.
 - For a new audio channel, copy `templates/audio-rss-channel/` into `feeds/<channel-slug>/`.
 - After copying, replace every placeholder token before publishing.
@@ -32,19 +33,21 @@ This file governs AI work for the whole repository.
 ## SOP: Create A New Text RSS Channel
 
 1. Pick a stable slug like `ai-weekly`.
-2. Copy `templates/text-rss-channel/` to `feeds/<channel-slug>/`.
-3. Replace placeholder tokens in:
+2. Prefer running:
+   `scripts/init_channel.sh --type text --slug <channel-slug> --title "<Channel Title>" ...`
+3. If the script is not used, copy `templates/text-rss-channel/` to `feeds/<channel-slug>/`.
+4. Replace placeholder tokens in:
    - `index.html`
    - `feed.xml`
    - `posts/replace-with-first-article.html`
    - channel-level `AGENTS.md` if needed
-4. Rename `posts/replace-with-first-article.html` to the first real post filename.
-5. Ensure the channel `feed.xml` item `link` and `guid` both point to that real post page.
-6. Generate or replace `cover.jpg` if the placeholder artwork should not be used.
-7. Add the channel entry to the repo root `index.html`.
-8. Add the channel entry to `feeds/index.html`.
-9. Run validation commands.
-10. Commit and push.
+5. Rename `posts/replace-with-first-article.html` to the first real post filename.
+6. Ensure the channel `feed.xml` item `link` and `guid` both point to that real post page.
+7. Generate or replace `cover.jpg` if the placeholder artwork should not be used.
+8. Add the channel entry to the repo root `index.html`.
+9. Add the channel entry to `feeds/index.html`.
+10. Run validation commands.
+11. Commit and push.
 
 ## SOP: Update An Existing Text RSS Channel
 
@@ -59,20 +62,22 @@ This file governs AI work for the whole repository.
 ## SOP: Create A New Audio RSS Channel
 
 1. Pick a stable slug like `history-audio`.
-2. Copy `templates/audio-rss-channel/` to `feeds/<channel-slug>/`.
-3. Replace placeholder tokens in:
+2. Prefer running:
+   `scripts/init_channel.sh --type audio --slug <channel-slug> --title "<Channel Title>" ...`
+3. If the script is not used, copy `templates/audio-rss-channel/` to `feeds/<channel-slug>/`.
+4. Replace placeholder tokens in:
    - `index.html`
    - `feed.xml`
    - channel-level `AGENTS.md` if needed
-4. Add the first audio file under `audio/`.
-5. Replace `{{EPISODE_FILE}}` with the real filename.
-6. Measure the real media byte size and set `{{EPISODE_LENGTH_BYTES}}`.
-7. Set `itunes:duration` to the real runtime.
-8. Generate or replace `cover.jpg` if the placeholder artwork should not be used.
-9. Add the channel entry to the repo root `index.html`.
-10. Add the channel entry to `feeds/index.html`.
-11. Run validation commands.
-12. Commit and push.
+5. Add the first audio file under `audio/`.
+6. Replace `{{EPISODE_FILE}}` with the real filename.
+7. Measure the real media byte size and set `{{EPISODE_LENGTH_BYTES}}`.
+8. Set `itunes:duration` to the real runtime.
+9. Generate or replace `cover.jpg` if the placeholder artwork should not be used.
+10. Add the channel entry to the repo root `index.html`.
+11. Add the channel entry to `feeds/index.html`.
+12. Run validation commands.
+13. Commit and push.
 
 ## SOP: Update An Existing Audio RSS Channel
 
