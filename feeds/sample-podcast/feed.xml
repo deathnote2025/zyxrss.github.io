@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sample Podcast</title>
+    <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/</link>
+    <description>Sample audio RSS feed hosted on GitHub Pages for structure verification.</description>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 27 Mar 2026 09:45:00 +0800</lastBuildDate>
+    <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/cover.svg</url>
+      <title>Sample Podcast</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/</link>
+    </image>
+    <item>
+      <title>Episode 001: GitHub Pages Skeleton Check</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/audio/episode-001.wav</guid>
+      <pubDate>Fri, 27 Mar 2026 09:45:00 +0800</pubDate>
+      <description>A tiny demo audio item used to verify channel layout and enclosure delivery.</description>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/audio/episode-001.wav"
+                 length="88278"
+                 type="audio/wav" />
+    </item>
+  </channel>
+</rss>

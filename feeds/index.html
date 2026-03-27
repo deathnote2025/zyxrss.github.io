@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feeds Index</title>
+  <style>
+    :root {
+      --bg: #f6efe5;
+      --card: rgba(255, 255, 255, 0.86);
+      --line: rgba(31, 41, 55, 0.12);
+      --text: #172030;
+      --muted: #596577;
+      --accent: #b45309;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 16px 40px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(180, 83, 9, 0.18), transparent 28%),
+        linear-gradient(180deg, #fbf7f2 0%, #efe6d9 100%);
+      font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    main {
+      width: min(860px, 100%);
+      margin: 0 auto;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: var(--card);
+      box-shadow: 0 22px 70px rgba(31, 41, 55, 0.12);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .feed {
+      margin-top: 24px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 250, 244, 0.8);
+    }
+
+    .feed h2 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Feeds</h1>
+    <p>
+      这里汇总当前站点上已经公开的 RSS 频道。当前先采用手工维护方式，后续新增频道时在这里补一条入口。
+    </p>
+
+    <section class="feed">
+      <h2>Sample Podcast</h2>
+      <p>示例音频频道，展示 RSS + 频道页 + 同目录音频资源的基础发布结构。</p>
+      <div class="links">
+        <a href="./sample-podcast/">频道页</a>
+        <a href="./sample-podcast/feed.xml">RSS</a>
+        <a href="./sample-podcast/audio/episode-001.wav">音频文件</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

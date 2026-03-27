@@ -6,12 +6,15 @@
   <title>zyxrss.github.io</title>
   <style>
     :root {
-      --bg: #f4efe7;
-      --card: rgba(255, 255, 255, 0.82);
+      --bg: #f7f1e8;
+      --card: rgba(255, 255, 255, 0.84);
+      --card-strong: rgba(255, 248, 239, 0.96);
       --text: #1f2937;
-      --muted: #5b6470;
-      --accent: #c2410c;
-      --border: rgba(31, 41, 55, 0.12);
+      --muted: #5f6b7a;
+      --accent: #bf5b04;
+      --accent-dark: #8a3900;
+      --line: rgba(31, 41, 55, 0.12);
+      --shadow: 0 28px 80px rgba(31, 41, 55, 0.12);
     }
 
     * {
@@ -21,94 +24,219 @@
     body {
       margin: 0;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(194, 65, 12, 0.18), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(20, 83, 45, 0.16), transparent 30%),
-        linear-gradient(135deg, #f8f5ef 0%, #efe6d8 100%);
+        radial-gradient(circle at top left, rgba(191, 91, 4, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(12, 74, 110, 0.16), transparent 28%),
+        linear-gradient(135deg, #faf5ef 0%, #efe6d9 100%);
       font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     }
 
-    main {
-      width: min(720px, 100%);
-      padding: 40px 32px;
-      border: 1px solid var(--border);
-      border-radius: 24px;
+    .shell {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 56px;
+    }
+
+    .hero,
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 28px;
       background: var(--card);
       backdrop-filter: blur(12px);
-      box-shadow: 0 24px 80px rgba(31, 41, 55, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 42px 34px;
     }
 
     .eyebrow {
-      margin: 0 0 12px;
+      margin: 0 0 14px;
+      color: var(--accent);
       font-size: 0.82rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--accent);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.05;
+      max-width: 10ch;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 0.97;
     }
 
-    p {
-      margin: 16px 0 0;
-      font-size: 1.05rem;
-      line-height: 1.7;
+    .lede {
+      max-width: 760px;
+      margin: 18px 0 0;
       color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.8;
     }
 
-    .status {
-      margin-top: 28px;
-      padding: 16px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(194, 65, 12, 0.18);
-      background: rgba(255, 247, 237, 0.95);
-      color: #9a3412;
-      font-weight: 600;
-    }
-
+    .hero-actions,
     .meta {
-      margin-top: 28px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
 
-    .chip {
-      padding: 10px 14px;
-      border: 1px solid var(--border);
+    .hero-actions {
+      margin-top: 28px;
+    }
+
+    .button,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.74);
+      text-decoration: none;
+    }
+
+    .button {
+      background: var(--accent);
+      color: #fff8f1;
+      font-weight: 700;
+    }
+
+    .button.alt {
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .meta {
+      margin-top: 26px;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
       color: var(--text);
       font-size: 0.95rem;
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      margin: 12px 0 0;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .links a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .checklist {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
     a {
       color: inherit;
     }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 20px, 1080px);
+        padding-top: 20px;
+      }
+
+      .hero,
+      .card {
+        border-radius: 22px;
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <p class="eyebrow">GitHub Pages Test</p>
-    <h1>这个页面已经上线测试。</h1>
-    <p>
-      如果你能在线看到这个页面，说明仓库的 GitHub Pages 发布链路已经打通。
-      后面你可以在这个基础上继续替换成正式首页，或者再接入静态站点生成器。
-    </p>
-    <div class="status">当前访问地址：<a href="https://deathnote2025.github.io/zyxrss.github.io/">https://deathnote2025.github.io/zyxrss.github.io/</a></div>
-    <div class="meta">
-      <div class="chip">Repo: deathnote2025/zyxrss.github.io</div>
-      <div class="chip">Branch: main</div>
-      <div class="chip">Entry: /index.html</div>
-      <div class="chip">Updated: 2026-03-27</div>
-    </div>
-  </main>
+  <div class="shell">
+    <section class="hero">
+      <p class="eyebrow">GitHub Pages RSS Host</p>
+      <h1>手工维护的 RSS 频道目录</h1>
+      <p class="lede">
+        这个站点现在进入第一版 RSS 骨架。所有频道都会收拢在统一的 <code>feeds/</code> 目录下，
+        一个频道对应一个稳定文件夹，一个频道固定一个 <code>feed.xml</code>，有音频时放在频道自己的 <code>audio/</code> 目录里。
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="./feeds/">查看频道索引</a>
+        <a class="button alt" href="./feeds/sample-podcast/">打开示例频道</a>
+        <a class="button alt" href="./feeds/sample-podcast/feed.xml">查看示例 RSS</a>
+      </div>
+      <div class="meta">
+        <span class="pill">Published on GitHub Pages</span>
+        <span class="pill">One Channel, One Folder</span>
+        <span class="pill">One Channel, One feed.xml</span>
+        <span class="pill">Updated: 2026-03-27</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-title">Channels</p>
+      <div class="grid">
+        <article class="card">
+          <h2>Sample Podcast</h2>
+          <p>
+            第一版示例频道，展示目录结构、频道页、RSS 文件和同目录音频资源的发布方式。
+            这个频道使用一个极小的示例音频文件作为 enclosure，方便直接检查客户端和浏览器访问链路。
+          </p>
+          <div class="links">
+            <a href="./feeds/sample-podcast/">频道页</a>
+            <a href="./feeds/sample-podcast/feed.xml">RSS</a>
+            <a href="./feeds/sample-podcast/audio/episode-001.wav">音频文件</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Maintenance Rules</h2>
+          <ul class="checklist">
+            <li>新增频道时，在 <code>feeds/</code> 下创建英文小写 slug 目录。</li>
+            <li>一个频道目录中只保留一个主 RSS 文件，固定命名为 <code>feed.xml</code>。</li>
+            <li>如果频道带音频，音频统一放在该频道自己的 <code>audio/</code> 目录内。</li>
+            <li>根首页和 <code>feeds/</code> 索引页当前先手工维护频道入口。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
