@@ -25,6 +25,7 @@
       <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/{{CHANNEL_SLUG}}/audio/{{EPISODE_FILE}}</guid>
       <pubDate>{{PUB_DATE_RFC822}}</pubDate>
       <description>{{EPISODE_SUMMARY}}</description>
+      <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/{{CHANNEL_SLUG}}/cover.jpg" />
       <itunes:duration>{{EPISODE_DURATION}}</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
       <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/{{CHANNEL_SLUG}}/audio/{{EPISODE_FILE}}"
