@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
-     xmlns:atom="http://www.w3.org/2005/Atom">
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Sample Podcast</title>
     <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/</link>
     <description>Sample audio RSS feed hosted on GitHub Pages for structure verification.</description>
+    <itunes:author>Sample Podcast</itunes:author>
+    <itunes:summary>Sample audio RSS feed hosted on GitHub Pages for structure verification.</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Technology" />
     <language>zh-cn</language>
     <lastBuildDate>Fri, 27 Mar 2026 09:45:00 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/feed.xml" rel="self" type="application/rss+xml" />
+    <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/cover.jpg" />
     <image>
-      <url>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/cover.svg</url>
+      <url>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/cover.jpg</url>
       <title>Sample Podcast</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast/</link>
     </image>
