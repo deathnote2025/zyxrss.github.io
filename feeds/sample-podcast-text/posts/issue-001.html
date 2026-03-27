@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue 001: Text Feed Structure</title>
+  <style>
+    :root {
+      --bg: #f8f1e7;
+      --card: rgba(255, 255, 255, 0.92);
+      --line: rgba(31, 41, 55, 0.12);
+      --text: #172030;
+      --muted: #5d6878;
+      --accent: #9f3e16;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 16px 40px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(159, 62, 22, 0.16), transparent 28%),
+        linear-gradient(180deg, #fcf8f3 0%, #efe4d7 100%);
+      font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    main {
+      width: min(820px, 100%);
+      margin: 0 auto;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: 0 24px 78px rgba(31, 41, 55, 0.12);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.02;
+    }
+
+    .meta {
+      margin-top: 12px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 1.04rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .actions a {
+      display: inline-flex;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Issue 001: Text Feed Structure</h1>
+    <div class="meta">2026-03-27 · Sample Podcast Text</div>
+    <p>
+      纯文本 RSS 和音频 RSS 的最大区别，不是 XML 结构，而是资源类型。没有音频时，
+      最重要的是让每个条目都有自己的公开页面，而不是所有 item 都回到频道首页。
+    </p>
+    <p>
+      真实项目里，文本 feed 的每个 item 通常对应一篇文章、一期简讯、一次摘要更新，或者一条正式公告。
+      这意味着模板层面应该从一开始就预留“单条内容页面”这一层，而不是把频道页同时当成列表页和正文页。
+    </p>
+    <p>
+      对订阅客户端来说，`feed.xml` 负责告诉它“有哪些新内容”；对读者来说，真正应该点击进去的是每一篇内容自己的页面。
+      这样后面你做真实频道时，只需要继续往 `posts/` 里增加页面，并在 `feed.xml` 中给出对应链接即可。
+    </p>
+    <div class="actions">
+      <a href="../">返回频道首页</a>
+      <a href="../feed.xml">打开 RSS</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -87,6 +87,7 @@ Purpose:
 - Machine-facing subscription entry.
 - Used by RSS readers and podcast clients.
 - Should not be treated as the main human-facing page.
+- For text-only channels, each item should link to a real item page rather than sending every item back to the channel home page.
 
 Apple Podcasts compatibility notes:
 - Prefer `MP3` or `AAC` for `enclosure` media. Do not use `WAV` as the default podcast delivery format.

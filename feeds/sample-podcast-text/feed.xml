@@ -16,24 +16,24 @@
 
     <item>
       <title>Issue 001: Text Feed Structure</title>
-      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/</link>
-      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/#issue-001</guid>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/posts/issue-001.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/posts/issue-001.html</guid>
       <pubDate>Fri, 27 Mar 2026 11:00:00 +0800</pubDate>
       <description>纯文本 RSS 不需要 audio 目录，核心是稳定的 feed.xml、条目标题和内容摘要。</description>
     </item>
 
     <item>
       <title>Issue 002: Human Page vs Machine Feed</title>
-      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/</link>
-      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/#issue-002</guid>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/posts/issue-002.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/posts/issue-002.html</guid>
       <pubDate>Fri, 27 Mar 2026 10:45:00 +0800</pubDate>
       <description>频道页给人看，feed.xml 给客户端读，职责分开之后会更稳。</description>
     </item>
 
     <item>
       <title>Issue 003: Stable URLs Matter</title>
-      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/</link>
-      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/#issue-003</guid>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/posts/issue-003.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/sample-podcast-text/posts/issue-003.html</guid>
       <pubDate>Fri, 27 Mar 2026 10:30:00 +0800</pubDate>
       <description>文本流和音频流一样，都依赖稳定 URL；频道 slug 和主 feed 文件名不应频繁变动。</description>
     </item>
