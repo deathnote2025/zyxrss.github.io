@@ -88,11 +88,30 @@ Purpose:
 - Used by RSS readers and podcast clients.
 - Should not be treated as the main human-facing page.
 
+Apple Podcasts compatibility notes:
+- Prefer `MP3` or `AAC` for `enclosure` media. Do not use `WAV` as the default podcast delivery format.
+- Add `xmlns:itunes` on the root `<rss>` element for Apple-specific tags.
+- Include `itunes:image` at channel level.
+- Include basic Apple-facing metadata such as `itunes:author`, `itunes:summary`, `itunes:explicit`, and `itunes:category`.
+- Episode items should include `itunes:duration` when possible.
+- Keep feed URLs and enclosure URLs public, stable, and directly reachable without redirects that require auth.
+
 ### `audio/`
 
 Purpose:
 - Stores only audio files for the current channel.
 - Keeps each channel self-contained.
+
+### `cover.jpg`
+
+Purpose:
+- Provides a stable podcast artwork asset for clients such as Apple Podcasts.
+
+Apple Podcasts compatibility notes:
+- Prefer `JPG` or `PNG`, not `SVG`.
+- Use square artwork.
+- Recommended practical range: `1400x1400` to `3000x3000`.
+- If Apple artwork refresh is delayed, changing the filename can help break remote cache assumptions.
 
 ## Manual Maintenance Workflow
 
@@ -106,6 +125,11 @@ Purpose:
 6. Update root `index.html` with a new channel link
 7. Commit and push
 8. Verify public URLs after Pages deploys
+9. If the channel targets Apple Podcasts, verify:
+   - feed URL loads publicly
+   - artwork URL loads publicly
+   - artwork is JPG/PNG and square
+   - enclosure media is MP3/AAC rather than WAV
 
 ### Update an existing channel
 
@@ -114,6 +138,7 @@ Purpose:
 3. If needed, update channel `index.html`
 4. Commit and push
 5. Verify public URLs
+6. For Apple Podcasts, allow for client-side caching before judging whether artwork changes have propagated
 
 ## Why This Structure
 
@@ -130,4 +155,3 @@ The first implementation step should be:
 1. Create the `feeds/` directory structure
 2. Add one sample channel
 3. Update the root home page to link to that sample channel
-
