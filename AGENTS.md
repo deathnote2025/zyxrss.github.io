@@ -29,6 +29,62 @@ This file governs AI work for the whole repository.
 - For a new audio channel, copy `templates/audio-rss-channel/` into `feeds/<channel-slug>/`.
 - After copying, replace every placeholder token before publishing.
 
+## SOP: Create A New Text RSS Channel
+
+1. Pick a stable slug like `ai-weekly`.
+2. Copy `templates/text-rss-channel/` to `feeds/<channel-slug>/`.
+3. Replace placeholder tokens in:
+   - `index.html`
+   - `feed.xml`
+   - `posts/replace-with-first-article.html`
+   - channel-level `AGENTS.md` if needed
+4. Rename `posts/replace-with-first-article.html` to the first real post filename.
+5. Ensure the channel `feed.xml` item `link` and `guid` both point to that real post page.
+6. Generate or replace `cover.jpg` if the placeholder artwork should not be used.
+7. Add the channel entry to the repo root `index.html`.
+8. Add the channel entry to `feeds/index.html`.
+9. Run validation commands.
+10. Commit and push.
+
+## SOP: Update An Existing Text RSS Channel
+
+1. Read the channel-local `AGENTS.md`.
+2. Create a new page under `posts/`.
+3. Add a new item to `feed.xml` at the top.
+4. Add the matching post summary block to `index.html` at the top.
+5. Keep `link` and `guid` pointed at the real post page.
+6. Re-run validation commands.
+7. Commit and push.
+
+## SOP: Create A New Audio RSS Channel
+
+1. Pick a stable slug like `history-audio`.
+2. Copy `templates/audio-rss-channel/` to `feeds/<channel-slug>/`.
+3. Replace placeholder tokens in:
+   - `index.html`
+   - `feed.xml`
+   - channel-level `AGENTS.md` if needed
+4. Add the first audio file under `audio/`.
+5. Replace `{{EPISODE_FILE}}` with the real filename.
+6. Measure the real media byte size and set `{{EPISODE_LENGTH_BYTES}}`.
+7. Set `itunes:duration` to the real runtime.
+8. Generate or replace `cover.jpg` if the placeholder artwork should not be used.
+9. Add the channel entry to the repo root `index.html`.
+10. Add the channel entry to `feeds/index.html`.
+11. Run validation commands.
+12. Commit and push.
+
+## SOP: Update An Existing Audio RSS Channel
+
+1. Read the channel-local `AGENTS.md`.
+2. Add the new media file under `audio/`.
+3. Measure its real byte size.
+4. Add a new item to `feed.xml` at the top.
+5. Add the matching episode block to `index.html` at the top.
+6. Keep `enclosure` `url`, `length`, `type`, and `itunes:duration` aligned with the real file.
+7. Re-run validation commands.
+8. Commit and push.
+
 ## Naming Rules
 
 - Channel folder names must use lowercase English slugs with `-`.
@@ -79,6 +135,17 @@ This file governs AI work for the whole repository.
   - any text item page URLs
   - any audio media URLs
   - cover asset URLs if the channel uses them
+
+## Quick Validation Examples
+
+- Text channel:
+  - `xmllint --noout feeds/<channel-slug>/feed.xml`
+  - `curl -I http://127.0.0.1:<port>/feeds/<channel-slug>/`
+  - `curl -I http://127.0.0.1:<port>/feeds/<channel-slug>/posts/<post-file>.html`
+- Audio channel:
+  - `xmllint --noout feeds/<channel-slug>/feed.xml`
+  - `curl -I http://127.0.0.1:<port>/feeds/<channel-slug>/`
+  - `curl -I http://127.0.0.1:<port>/feeds/<channel-slug>/audio/<episode-file>`
 
 ## Do Not
 
