@@ -86,7 +86,7 @@ This file governs AI work for the whole repository.
 3. Measure its real byte size.
 4. Add a new item to `feed.xml` at the top.
 5. Add the matching episode block to `index.html` at the top.
-6. Keep `enclosure` `url`, `length`, `type`, `itunes:duration`, and item-level `itunes:image` aligned with the real file and artwork choice.
+6. Keep `enclosure` `url`, `length`, `type`, and `itunes:duration` aligned with the real file and artwork choice.
 7. Re-run validation commands.
 8. Commit and push.
 
@@ -119,7 +119,7 @@ This file governs AI work for the whole repository.
 1. Add the media file under `audio/`.
 2. Add a new item to `feed.xml`.
 3. Add the new episode entry to the channel `index.html`.
-4. Keep `enclosure` `url`, `length`, `type`, `itunes:duration`, and item-level `itunes:image` in sync with the real media file and artwork choice.
+4. Keep `enclosure` `url`, `length`, `type`, and `itunes:duration` in sync with the real media file and artwork choice.
 5. Prefer `MP3` or `AAC` for podcast media.
 
 ## Apple Podcasts Constraints
@@ -128,9 +128,9 @@ This file governs AI work for the whole repository.
 - Artwork should be square and ideally between `1400x1400` and `3000x3000`.
 - Audio podcast feeds should include `xmlns:itunes`.
 - Audio podcast feeds should include `itunes:image`, `itunes:author`, `itunes:summary`, `itunes:explicit`, and `itunes:category`.
-- Audio podcast item entries should also include `itunes:image`; if there is no episode-specific artwork, default it to the same image URL used by the channel cover.
+- Episode artwork is optional. If you do not provide episode-specific art, Apple can display the show cover artwork instead.
 - If artwork changes are not reflected by Apple clients, consider using a new filename.
-- When rotating artwork filenames, update both channel-level and item-level artwork URLs rather than only replacing the file in place.
+- If you explicitly add episode-specific artwork later, test the Apple follow flow again before treating it as a default pattern.
 
 ## Verification Before Push
 

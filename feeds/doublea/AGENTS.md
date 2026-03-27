@@ -30,7 +30,7 @@ When adding a new episode:
 2. Measure the real file size in bytes and duration with `ffprobe`.
 3. Create a standalone episode page under `episodes/`.
 4. Add a new `<item>` at the top of `feed.xml`.
-5. Point the item `link` and `guid` to the episode page, point `enclosure` to the real MP3 URL, and include item-level `itunes:image`.
+5. Point the item `link` and `guid` to the episode page, and point `enclosure` to the real MP3 URL.
 6. Keep all older `<item>` entries below it in reverse chronological order; do not reorder older entries arbitrarily.
 7. Update `index.html` so the newest episode appears first.
 8. If there is already more than one episode, keep the older episode list below the newest one in reverse chronological order.
@@ -40,11 +40,11 @@ When adding a new episode:
 
 - Keep `xmlns:itunes` in `feed.xml`.
 - Keep `itunes:image`, `itunes:author`, `itunes:summary`, `itunes:explicit`, and `itunes:category`.
-- Keep item-level `itunes:image` on each episode; if there is no separate episode artwork, default it to the same URL as the current channel cover.
 - Keep cover art as square `JPG` or `PNG`; `3000x3000` is preferred.
 - Prefer `MP3` or `AAC` for published audio.
 - Do not replace published media or artwork URLs casually once clients may have cached them.
 - If artwork needs to refresh in Apple Podcasts, publish it under a new filename such as `cover-20260327.jpg` and update `feed.xml` plus `index.html`; do not rely on overwriting the old file in place.
+- Episode artwork is optional; Apple can use the channel cover when item-level artwork is absent.
 
 ## Content Rules
 

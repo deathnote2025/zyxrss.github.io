@@ -97,7 +97,7 @@ Apple Podcasts compatibility notes:
 - Prefer `MP3` or `AAC` for `enclosure` media. Do not use `WAV` as the default podcast delivery format.
 - Add `xmlns:itunes` on the root `<rss>` element for Apple-specific tags.
 - Include `itunes:image` at channel level.
-- Include `itunes:image` at item level as well; if there is no separate episode artwork, reuse the channel cover URL.
+- Episode art is optional. If you do not supply it, Apple can display the show cover artwork.
 - Include basic Apple-facing metadata such as `itunes:author`, `itunes:summary`, `itunes:explicit`, and `itunes:category`.
 - Episode items should include `itunes:duration` when possible.
 - Keep feed URLs and enclosure URLs public, stable, and directly reachable without redirects that require auth.
@@ -118,7 +118,6 @@ Apple Podcasts compatibility notes:
 - Use square artwork.
 - Recommended practical range: `1400x1400` to `3000x3000`.
 - If Apple artwork refresh is delayed, changing the filename can help break remote cache assumptions.
-- If the artwork filename changes, update both the channel-level artwork URL and any item-level `itunes:image` URLs that should follow it.
 
 ## Manual Maintenance Workflow
 
@@ -153,7 +152,7 @@ Apple Podcasts compatibility notes:
 4. Commit and push
 5. Verify public URLs
 6. For Apple Podcasts, allow for client-side caching before judging whether artwork changes have propagated
-7. If a show or episode image still does not refresh, publish the image under a new filename and update both channel-level and item-level image URLs
+7. If the show cover image still does not refresh, publish it under a new filename and update the channel-level artwork URL
 
 ## Why This Structure
 

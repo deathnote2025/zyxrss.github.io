@@ -42,16 +42,15 @@ When adding a new episode:
 3. Add a new item to `feed.xml`.
 4. Add the new episode block to `index.html`.
 5. Keep the newest episode first.
-6. Add item-level `itunes:image`; if there is no episode-specific image yet, use the same URL as the channel cover.
-7. Verify `enclosure` `url`, `length`, `type`, `itunes:duration`, and `itunes:image`.
+6. Verify `enclosure` `url`, `length`, `type`, and `itunes:duration`.
 
 ## Apple Podcasts Notes
 
 - Keep `xmlns:itunes` in `feed.xml`.
 - Keep `itunes:image`, `itunes:author`, `itunes:summary`, `itunes:explicit`, and `itunes:category`.
-- Keep item-level `itunes:image` on each episode; if there is no separate episode artwork, default it to the channel cover URL.
 - Use `cover.jpg` or `cover.png`, not `SVG`, for the published feed artwork.
-- If artwork does not refresh in Apple Podcasts, publish the image under a new filename and update both channel-level and item-level image references.
+- Episode artwork is optional; Apple can use the show cover when episode-specific art is absent.
+- If artwork does not refresh in Apple Podcasts, publish the image under a new filename and update the channel-level image reference.
 
 ## Validation
 
