@@ -43,6 +43,7 @@ When adding a new episode:
 - Keep cover art as square `JPG` or `PNG`; `3000x3000` is preferred.
 - Prefer `MP3` or `AAC` for published audio.
 - Do not replace published media or artwork URLs casually once clients may have cached them.
+- If artwork needs to refresh in Apple Podcasts, publish it under a new filename such as `cover-20260327.jpg` and update `feed.xml` plus `index.html`; do not rely on overwriting the old file in place.
 
 ## Content Rules
 
