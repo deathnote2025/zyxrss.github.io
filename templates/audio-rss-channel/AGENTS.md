@@ -47,6 +47,15 @@ When adding a new episode:
 6. Keep the newest episode first.
 7. Verify `enclosure` `url`, `length`, `type`, and `itunes:duration`.
 
+When deleting an episode:
+1. Prefer running `python update.py --delete-slug <episode-page-slug>`.
+2. Delete by the episode page slug, not by the human title.
+3. Confirm the matching episode page disappears.
+4. Confirm the matching media file under `audio/` disappears.
+5. Confirm the item disappears from `feed.xml`.
+6. Confirm `apple-feed.xml` stays synchronized when the channel uses one.
+7. Confirm `index.html` has been rebuilt without the deleted episode.
+
 ## Apple Podcasts Notes
 
 - Keep `xmlns:itunes` in `feed.xml`.
@@ -61,6 +70,7 @@ When adding a new episode:
 ## Validation
 
 - `xmllint --noout feed.xml`
+- `python update.py --delete-slug <episode-page-slug> --dry-run` when rehearsing a deletion
 - Check `index.html`
 - Check the media URL under `audio/`
 - Check `feed.xml` `enclosure` metadata against the real file

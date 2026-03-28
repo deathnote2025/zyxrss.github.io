@@ -87,14 +87,38 @@ python feeds/sample-podcast-text/update.py \
   --content-file /absolute/path/to/post-body.txt
 ```
 
+### Delete an existing item
+
+Use the detail-page slug, not the human title.
+
+```bash
+python feeds/doublea/update.py \
+  --delete-slug episode-002-token-economy-self-drive
+```
+
+```bash
+python feeds/sample-podcast-text/update.py \
+  --delete-slug issue-003
+```
+
+Useful optional flag:
+- `--dry-run`
+
 ### What the update engine does
 
 - Reads the channel-local `channel.json`
 - Creates the next post or episode detail page
+- Deletes an existing post or episode when `--delete-slug` is used
 - Updates `feed.xml`
 - Updates `apple-feed.xml` when the channel uses one
 - Rebuilds the channel `index.html`
 - Copies media files and infers byte size and duration for audio channels
+
+When deleting an item, the engine removes:
+- the matching RSS item
+- the matching detail page
+- the matching media file for audio channels
+- the matching item in `apple-feed.xml` when that channel uses one
 
 ### What the update engine does not do
 

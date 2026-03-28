@@ -53,12 +53,24 @@ This file governs AI work for the whole repository.
 ## SOP: Update An Existing Text RSS Channel
 
 1. Read the channel-local `AGENTS.md`.
-2. Create a new page under `posts/`.
-3. Add a new item to `feed.xml` at the top.
-4. Add the matching post summary block to `index.html` at the top.
-5. Keep `link` and `guid` pointed at the real post page.
-6. Re-run validation commands.
-7. Commit and push.
+2. Prefer running `python update.py --title ... --summary ...`.
+3. Create a new page under `posts/` if you are not using the wrapper.
+4. Add a new item to `feed.xml` at the top.
+5. Add the matching post summary block to `index.html` at the top.
+6. Keep `link` and `guid` pointed at the real post page.
+7. Re-run validation commands.
+8. Commit and push.
+
+## SOP: Delete An Existing Text RSS Item
+
+1. Read the channel-local `AGENTS.md`.
+2. Prefer running `python update.py --delete-slug <post-slug>`.
+3. Delete by the detail-page slug such as `issue-003`, not by the display title.
+4. Confirm the matching `posts/<post-slug>.html` file is removed.
+5. Confirm the matching item is removed from `feed.xml`.
+6. Confirm `index.html` has been rebuilt without the deleted item.
+7. Re-run validation commands.
+8. Commit and push.
 
 ## SOP: Create A New Audio RSS Channel
 
@@ -83,13 +95,27 @@ This file governs AI work for the whole repository.
 ## SOP: Update An Existing Audio RSS Channel
 
 1. Read the channel-local `AGENTS.md`.
-2. Add the new media file under `audio/`.
-3. Measure its real byte size.
-4. Add a new item to `feed.xml` at the top.
-5. Add the matching episode block to `index.html` at the top.
-6. Keep `enclosure` `url`, `length`, `type`, and `itunes:duration` aligned with the real file and artwork choice.
-7. Re-run validation commands.
-8. Commit and push.
+2. Prefer running `python update.py --title ... --summary ... --media-file-src ...`.
+3. Add the new media file under `audio/` if you are not using the wrapper.
+4. Measure its real byte size.
+5. Add a new item to `feed.xml` at the top.
+6. Add the matching episode block to `index.html` at the top.
+7. Keep `enclosure` `url`, `length`, `type`, and `itunes:duration` aligned with the real file and artwork choice.
+8. Re-run validation commands.
+9. Commit and push.
+
+## SOP: Delete An Existing Audio RSS Episode
+
+1. Read the channel-local `AGENTS.md`.
+2. Prefer running `python update.py --delete-slug <episode-slug>`.
+3. Delete by the episode page slug such as `episode-002-topic-name`, not by the display title.
+4. Confirm the matching `episodes/<episode-slug>.html` file is removed.
+5. Confirm the matching `audio/<episode-file>.mp3` or `.m4a` file is removed.
+6. Confirm the matching item is removed from `feed.xml`.
+7. Confirm `apple-feed.xml` is also updated when that channel uses one.
+8. Confirm `index.html` has been rebuilt without the deleted episode.
+9. Re-run validation commands.
+10. Commit and push.
 
 ## Naming Rules
 
@@ -115,6 +141,7 @@ This file governs AI work for the whole repository.
 4. Add the new item to the channel `index.html`.
 5. Keep item links and `guid` values pointed at the real article page, not the channel home page.
 6. Keep items in reverse chronological order.
+7. If a published item needs to be removed, prefer `python feeds/<channel-slug>/update.py --delete-slug <post-slug>` over hand-editing multiple files.
 
 ## Required Updates For Existing Audio Channels
 
@@ -124,6 +151,7 @@ This file governs AI work for the whole repository.
 4. Add the new episode entry to the channel `index.html`.
 5. Keep `enclosure` `url`, `length`, `type`, and `itunes:duration` in sync with the real media file and artwork choice.
 6. Prefer `MP3` or `AAC` for podcast media.
+7. If a published episode needs to be removed, prefer `python feeds/<channel-slug>/update.py --delete-slug <episode-slug>` over manually editing feed, page, and media files separately.
 
 ## Apple Podcasts Constraints
 

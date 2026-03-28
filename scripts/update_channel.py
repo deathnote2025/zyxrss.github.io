@@ -72,16 +72,22 @@ class Entry:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Update an existing text or audio RSS channel.")
     parser.add_argument("--channel-dir", required=True, help="Absolute or relative path to the channel folder")
-    parser.add_argument("--title", required=True, help="Post or episode title")
-    parser.add_argument("--summary", required=True, help="Short summary used in feed and channel index")
+    parser.add_argument("--title", help="Post or episode title")
+    parser.add_argument("--summary", help="Short summary used in feed and channel index")
     parser.add_argument("--content", help="Long-form body content for the detail page")
     parser.add_argument("--content-file", help="Read long-form body content from a text file")
     parser.add_argument("--entry-slug", help="Optional ASCII slug suffix for the new item")
+    parser.add_argument("--delete-slug", help="Delete an existing item by the detail-page slug, for example issue-003 or episode-002-topic-name")
     parser.add_argument("--pub-date-rfc822", help="Optional RFC 2822 publication date")
     parser.add_argument("--date-label", help="Optional human-readable date label")
     parser.add_argument("--media-file-src", help="Audio file source path for audio channels")
     parser.add_argument("--dry-run", action="store_true", help="Parse and print planned outputs without writing files")
-    return parser.parse_args()
+    args = parser.parse_args()
+    if args.delete_slug:
+        return args
+    if not args.title or not args.summary:
+        parser.error("--title and --summary are required unless --delete-slug is used")
+    return args
 
 
 def die(message: str) -> None:
@@ -309,6 +315,10 @@ def relative_channel_path(config: ChannelConfig, public_url: str) -> str:
     return public_url
 
 
+def entry_slug_from_rel_path(rel_path: str) -> str:
+    return Path(rel_path).stem
+
+
 def next_entry_number(entries: list[Entry], config: ChannelConfig) -> int:
     numbers = [entry.entry_number for entry in entries if entry.entry_number is not None]
     if numbers:
@@ -387,6 +397,30 @@ def create_new_entry(args: argparse.Namespace, channel_dir: Path, config: Channe
         description_html=html.escape(args.summary.strip()),
         body_html=body_html,
     )
+
+
+def delete_entry(channel_dir: Path, entries: list[Entry], delete_slug: str, dry_run: bool) -> tuple[list[Entry], Entry]:
+    target: Optional[Entry] = None
+    remaining: list[Entry] = []
+    for entry in entries:
+        if entry_slug_from_rel_path(entry.page_rel_path) == delete_slug:
+            target = entry
+            continue
+        remaining.append(entry)
+
+    if target is None:
+        die(f"Entry not found for delete slug: {delete_slug}")
+
+    if not dry_run:
+        detail_path = channel_dir / target.page_rel_path
+        if detail_path.exists():
+            detail_path.unlink()
+        if target.media_rel_path:
+            media_path = channel_dir / target.media_rel_path
+            if media_path.exists():
+                media_path.unlink()
+
+    return remaining, target
 
 
 def write_feed_file(feed_path: Path, config: ChannelConfig, entries: list[Entry], self_rel_path: str, include_content_ns: bool) -> None:
@@ -1216,6 +1250,37 @@ def main() -> None:
     config = load_channel_config(channel_dir)
     main_feed_path = channel_dir / config.feed_path
     existing_entries = parse_existing_entries(main_feed_path, config)
+
+    if args.delete_slug:
+        remaining_entries, deleted_entry = delete_entry(channel_dir, existing_entries, args.delete_slug, args.dry_run)
+        if args.dry_run:
+            print(json.dumps({
+                "channel": config.slug,
+                "type": config.channel_type,
+                "deleted_page": deleted_entry.page_rel_path,
+                "deleted_media": deleted_entry.media_rel_path,
+                "feed_count_after": len(remaining_entries),
+            }, ensure_ascii=False, indent=2))
+            return
+
+        if config.channel_type == "audio":
+            write_text(channel_dir / "index.html", render_audio_index(config, remaining_entries))
+            write_feed_file(main_feed_path, config, remaining_entries, config.feed_path, include_content_ns=False)
+            if config.apple_feed_path:
+                write_feed_file(channel_dir / config.apple_feed_path, config, remaining_entries, config.apple_feed_path, include_content_ns=True)
+        else:
+            write_text(channel_dir / "index.html", render_text_index(config, remaining_entries))
+            write_feed_file(main_feed_path, config, remaining_entries, config.feed_path, include_content_ns=False)
+
+        print(f"Updated channel: {config.slug}")
+        print(f"Deleted detail page: {deleted_entry.page_rel_path}")
+        if deleted_entry.media_rel_path:
+            print(f"Deleted media file: {deleted_entry.media_rel_path}")
+        print(f"Feed updated: {config.feed_path}")
+        if config.apple_feed_path:
+            print(f"Apple feed updated: {config.apple_feed_path}")
+        return
+
     new_entry = create_new_entry(args, channel_dir, config, existing_entries)
     all_entries = [new_entry] + existing_entries
 

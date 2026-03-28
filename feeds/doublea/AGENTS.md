@@ -41,6 +41,14 @@ When adding a new episode:
 10. If there is already more than one episode, keep the older episode list below the newest one in reverse chronological order.
 11. If the channel list changed, update the repo root `index.html` and `feeds/index.html` manually.
 
+When deleting an episode:
+1. Prefer running `python update.py --delete-slug <episode-page-slug>`.
+2. Delete by the episode page slug such as `episode-002-token-economy-self-drive`, not by the display title.
+3. Confirm the matching `episodes/<slug>.html` page is removed.
+4. Confirm the matching `audio/*.mp3` file is removed.
+5. Confirm the item disappears from both `feed.xml` and `apple-feed.xml`.
+6. Confirm `index.html` has been rebuilt with the remaining episodes still in reverse chronological order.
+
 ## Apple Podcasts Notes
 
 - Keep `xmlns:itunes` in `feed.xml`.
@@ -65,6 +73,7 @@ When adding a new episode:
 
 - `xmllint --noout feed.xml`
 - `xmllint --noout apple-feed.xml`
+- `python update.py --delete-slug <episode-page-slug> --dry-run` when rehearsing a deletion
 - Check the episode page URL
 - Check the media URL under `audio/`
 - Check `feed.xml` `enclosure` metadata against the real file

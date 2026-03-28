@@ -44,9 +44,17 @@ When adding a new post:
 5. Keep the newest item first in both `feed.xml` and `index.html`.
 6. Keep `link` and `guid` pointed at the real post page URL.
 
+When deleting a post:
+1. Prefer running `python update.py --delete-slug <post-slug>`.
+2. Delete by the page slug such as `issue-003`, not by the human title.
+3. Confirm the matching `posts/<post-slug>.html` file disappears.
+4. Confirm the item disappears from `feed.xml`.
+5. Confirm `index.html` has been rebuilt without the deleted post.
+
 ## Validation
 
 - `xmllint --noout feed.xml`
+- `python update.py --delete-slug <post-slug> --dry-run` when rehearsing a deletion
 - Check `index.html`
 - Check each new `posts/*.html`
 - Check `feed.xml` item links
