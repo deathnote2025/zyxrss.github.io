@@ -12,7 +12,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education" />
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Mar 2026 22:40:12 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2026 09:05:09 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
     <image>
@@ -20,6 +20,29 @@
       <title>doublea</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
     </image>
+    <item>
+      <title>用代币制激发自驱力</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-002-token-economy-self-drive.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-002-token-economy-self-drive.html</guid>
+      <pubDate>Sat, 28 Mar 2026 09:05:09 +0800</pubDate>
+      <description><![CDATA[
+        <p>这期从代币制的系统设计切入，讨论为什么它能起作用、为什么“明码标价”会破坏内在动机，以及怎样把外部奖励过渡到更稳定的自律。</p>
+        <ul>
+          <li>为什么代币制像 RPG 的经验值系统，能把抽象好行为即时可视化</li>
+          <li>为什么不能把所有行为都做成价格表，否则系统会滑向纯控制</li>
+          <li>为什么要把代币从控制性反馈，转成信息性反馈</li>
+          <li>为什么常规代币制只能覆盖大部分需求，剩下的要分层干预</li>
+          <li>为什么退出阶段必须大量注入社会性奖励，才能走向内在自律</li>
+        </ul>
+      ]]></description>
+      <itunes:duration>13:32</itunes:duration>
+      <itunes:episode>2</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-002-token-economy-self-drive.mp3"
+                 length="3254773"
+                 type="audio/mpeg" />
+    </item>
     <item>
       <title>设计有效的奖励：从斯金纳到自律</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-001-design-effective-rewards.html</link>
