@@ -51,6 +51,9 @@ When adding a new episode:
 - Use `cover.jpg` or `cover.png`, not `SVG`, for the published feed artwork.
 - Episode artwork is optional; Apple can use the show cover when episode-specific art is absent.
 - If artwork does not refresh in Apple Podcasts, publish the image under a new filename and update the channel-level image reference.
+- Do not create a second Apple-only feed by default.
+- If Apple Podcasts still behaves inconsistently after the main `feed.xml`, cover URL, and media URL are all confirmed public and healthy, you may add an `apple-feed.xml` fallback that mirrors the same metadata and items with a different self URL.
+- If you add `apple-feed.xml`, verify both feeds stay synchronized on every future episode update.
 
 ## Validation
 

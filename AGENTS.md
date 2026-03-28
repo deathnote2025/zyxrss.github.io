@@ -131,6 +131,9 @@ This file governs AI work for the whole repository.
 - Episode artwork is optional. If you do not provide episode-specific art, Apple can display the show cover artwork instead.
 - If artwork changes are not reflected by Apple clients, consider using a new filename.
 - If you explicitly add episode-specific artwork later, test the Apple follow flow again before treating it as a default pattern.
+- If an Apple follow or refresh issue persists even though the current feed, audio URL, and artwork URL are all publicly returning `200`, prefer adding a second Apple-specific feed URL such as `apple-feed.xml` instead of repeatedly mutating the original `feed.xml`.
+- If a channel adopts a second Apple-specific feed, keep its channel metadata and item list synchronized with `feed.xml`; only the self-referencing feed URL should differ.
+- After pushing a new alternate feed file to GitHub Pages, wait until the new public URL returns `200` before testing it in Apple Podcasts.
 
 ## Verification Before Push
 
@@ -151,6 +154,7 @@ This file governs AI work for the whole repository.
   - `curl -I http://127.0.0.1:<port>/feeds/<channel-slug>/posts/<post-file>.html`
 - Audio channel:
   - `xmllint --noout feeds/<channel-slug>/feed.xml`
+  - `xmllint --noout feeds/<channel-slug>/apple-feed.xml` when the channel keeps a separate Apple-specific feed
   - `curl -I http://127.0.0.1:<port>/feeds/<channel-slug>/`
   - `curl -I http://127.0.0.1:<port>/feeds/<channel-slug>/audio/<episode-file>`
 

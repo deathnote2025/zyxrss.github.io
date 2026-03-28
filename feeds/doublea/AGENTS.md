@@ -48,6 +48,7 @@ When adding a new episode:
 - If artwork needs to refresh in Apple Podcasts, publish it under a new filename such as `cover-20260327.jpg` and update `feed.xml` plus `index.html`; do not rely on overwriting the old file in place.
 - Episode artwork is optional; Apple can use the channel cover when item-level artwork is absent.
 - `apple-feed.xml` exists specifically to give Apple Podcasts a stable fallback URL if `feed.xml` is stuck behind client-side or platform-side cache.
+- If `apple-feed.xml` is updated or newly added, wait until its public GitHub Pages URL actually returns `200` before testing follow flow in Apple Podcasts.
 
 ## Content Rules
 
@@ -60,6 +61,8 @@ When adding a new episode:
 ## Validation
 
 - `xmllint --noout feed.xml`
+- `xmllint --noout apple-feed.xml`
 - Check the episode page URL
 - Check the media URL under `audio/`
 - Check `feed.xml` `enclosure` metadata against the real file
+- Check the public `apple-feed.xml` URL when this channel is being tested in Apple Podcasts

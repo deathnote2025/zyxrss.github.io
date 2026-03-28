@@ -101,6 +101,8 @@ Apple Podcasts compatibility notes:
 - Include basic Apple-facing metadata such as `itunes:author`, `itunes:summary`, `itunes:explicit`, and `itunes:category`.
 - Episode items should include `itunes:duration` when possible.
 - Keep feed URLs and enclosure URLs public, stable, and directly reachable without redirects that require auth.
+- If Apple Podcasts behaves inconsistently even while the public feed and assets are healthy, a second Apple-specific feed URL such as `apple-feed.xml` can be used as a cache-busting fallback.
+- If a channel adopts both `feed.xml` and `apple-feed.xml`, keep their metadata and item lists synchronized; only the self feed URL should differ.
 
 ### `audio/`
 
@@ -153,6 +155,7 @@ Apple Podcasts compatibility notes:
 5. Verify public URLs
 6. For Apple Podcasts, allow for client-side caching before judging whether artwork changes have propagated
 7. If the show cover image still does not refresh, publish it under a new filename and update the channel-level artwork URL
+8. If Apple still cannot follow a healthy feed URL, consider publishing a second Apple-specific feed URL and retrying with that new endpoint after GitHub Pages returns `200`
 
 ## Why This Structure
 
