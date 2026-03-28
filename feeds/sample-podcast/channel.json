@@ -1,0 +1,15 @@
+{
+  "type": "audio",
+  "slug": "sample-podcast",
+  "channel_title": "Sample Podcast",
+  "channel_description": "Sample audio RSS feed hosted on GitHub Pages for structure verification.",
+  "base_url": "https://deathnote2025.github.io/zyxrss.github.io",
+  "feed_path": "feed.xml",
+  "apple_feed_path": "",
+  "cover_image": "cover.jpg",
+  "language": "zh-cn",
+  "entry_prefix": "episode",
+  "author": "Sample Podcast",
+  "category": "Technology",
+  "explicit": false
+}

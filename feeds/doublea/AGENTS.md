@@ -20,6 +20,8 @@ This file governs AI work inside `feeds/doublea/`.
 - `index.html`
 - `feed.xml`
 - `apple-feed.xml`
+- `channel.json`
+- `update.py`
 - `cover.jpg` or a rotated filename such as `cover-20260327.jpg`
 - `episodes/*.html`
 - `audio/*.mp3`
@@ -27,16 +29,17 @@ This file governs AI work inside `feeds/doublea/`.
 ## Episode Update Workflow
 
 When adding a new episode:
-1. Add the media file under `audio/` using a stable ASCII filename such as `episode-002-topic-name.mp3`.
-2. Measure the real file size in bytes and duration with `ffprobe`.
-3. Create a standalone episode page under `episodes/`.
-4. Add a new `<item>` at the top of `feed.xml`.
-5. Mirror the same channel metadata and item list into `apple-feed.xml`; only the `atom:link rel="self"` URL should differ.
-6. Point each item `link` and `guid` to the episode page, and point `enclosure` to the real MP3 URL.
-7. Keep all older `<item>` entries below the newest one in reverse chronological order; do not reorder older entries arbitrarily.
-8. Update `index.html` so the newest episode appears first.
-9. If there is already more than one episode, keep the older episode list below the newest one in reverse chronological order.
-10. If the channel list changed, update the repo root `index.html` and `feeds/index.html` manually.
+1. Prefer running `python update.py --title ... --summary ... --media-file-src ...`.
+2. Add the media file under `audio/` using a stable ASCII filename such as `episode-002-topic-name.mp3` if you are not using the wrapper.
+3. Measure the real file size in bytes and duration with `ffprobe`.
+4. Create a standalone episode page under `episodes/`.
+5. Add a new `<item>` at the top of `feed.xml`.
+6. Mirror the same channel metadata and item list into `apple-feed.xml`; only the `atom:link rel="self"` URL should differ.
+7. Point each item `link` and `guid` to the episode page, and point `enclosure` to the real MP3 URL.
+8. Keep all older `<item>` entries below the newest one in reverse chronological order; do not reorder older entries arbitrarily.
+9. Update `index.html` so the newest episode appears first.
+10. If there is already more than one episode, keep the older episode list below the newest one in reverse chronological order.
+11. If the channel list changed, update the repo root `index.html` and `feeds/index.html` manually.
 
 ## Apple Podcasts Notes
 

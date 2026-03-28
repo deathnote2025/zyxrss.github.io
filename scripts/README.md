@@ -50,3 +50,55 @@ scripts/init_channel.sh \
 - It does not generate a new custom cover image
 
 After running the script, follow the repo root `AGENTS.md` and the channel-local `AGENTS.md`.
+
+## `update_channel.py`
+
+Use this shared Python engine to update an existing channel after the folder has already been created.
+
+### Pattern
+
+- Shared engine: `scripts/update_channel.py`
+- Per-channel rules: `feeds/<channel-slug>/channel.json`
+- Per-channel thin wrapper: `feeds/<channel-slug>/update.py`
+
+In normal use, prefer running the channel-local wrapper.
+
+### Update an audio channel
+
+```bash
+python feeds/doublea/update.py \
+  --title "Episode title" \
+  --summary "Short feed summary." \
+  --content-file /absolute/path/to/show-notes.txt \
+  --media-file-src /absolute/path/to/audio.mp3
+```
+
+Useful optional flags:
+- `--entry-slug readable-ascii-suffix`
+- `--pub-date-rfc822 "Sat, 28 Mar 2026 09:05:09 +0800"`
+- `--date-label 2026-03-28`
+
+### Update a text channel
+
+```bash
+python feeds/sample-podcast-text/update.py \
+  --title "Issue title" \
+  --summary "Short feed summary." \
+  --content-file /absolute/path/to/post-body.txt
+```
+
+### What the update engine does
+
+- Reads the channel-local `channel.json`
+- Creates the next post or episode detail page
+- Updates `feed.xml`
+- Updates `apple-feed.xml` when the channel uses one
+- Rebuilds the channel `index.html`
+- Copies media files and infers byte size and duration for audio channels
+
+### What the update engine does not do
+
+- It does not update the repo root `index.html`
+- It does not update `feeds/index.html`
+- It does not commit or push
+- It does not rotate cover filenames automatically

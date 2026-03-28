@@ -74,7 +74,7 @@ replace_all_in_dir() {
   local replacement="$3"
   while IFS= read -r file; do
     replace_in_file "$placeholder" "$replacement" "$file"
-  done < <(find "$dir" -type f \( -name '*.md' -o -name '*.html' -o -name '*.xml' \) | sort)
+  done < <(find "$dir" -type f \( -name '*.md' -o -name '*.html' -o -name '*.xml' -o -name '*.json' \) | sort)
 }
 
 current_rfc822() {

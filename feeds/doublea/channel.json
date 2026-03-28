@@ -1,0 +1,15 @@
+{
+  "type": "audio",
+  "slug": "doublea",
+  "channel_title": "doublea",
+  "channel_description": "doublea 是一个不设主题边界的个人播客。最近看了什么、想到什么、想展开聊什么，就更新什么。",
+  "base_url": "https://deathnote2025.github.io/zyxrss.github.io",
+  "feed_path": "feed.xml",
+  "apple_feed_path": "apple-feed.xml",
+  "cover_image": "cover-20260327.jpg",
+  "language": "zh-cn",
+  "entry_prefix": "episode",
+  "author": "doublea",
+  "category": "Education",
+  "explicit": false
+}

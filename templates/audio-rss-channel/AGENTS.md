@@ -31,18 +31,21 @@ Replace all placeholders:
 
 - `index.html`
 - `feed.xml`
+- `channel.json`
+- `update.py`
 - `cover.jpg`
 - `audio/<episode-file>.mp3` or `audio/<episode-file>.m4a`
 
 ## Update Workflow
 
 When adding a new episode:
-1. Add the media file under `audio/`.
-2. Measure the real file size in bytes.
-3. Add a new item to `feed.xml`.
-4. Add the new episode block to `index.html`.
-5. Keep the newest episode first.
-6. Verify `enclosure` `url`, `length`, `type`, and `itunes:duration`.
+1. Prefer running `python update.py --title ... --summary ... --media-file-src ...`.
+2. Add the media file under `audio/` if you are not using the wrapper.
+3. Measure the real file size in bytes.
+4. Add a new item to `feed.xml`.
+5. Add the new episode block to `index.html`.
+6. Keep the newest episode first.
+7. Verify `enclosure` `url`, `length`, `type`, and `itunes:duration`.
 
 ## Apple Podcasts Notes
 

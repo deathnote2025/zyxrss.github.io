@@ -1,0 +1,11 @@
+{
+  "type": "text",
+  "slug": "sample-podcast-text",
+  "channel_title": "Sample Podcast Text",
+  "channel_description": "Sample text-only RSS feed hosted on GitHub Pages for article-style updates.",
+  "base_url": "https://deathnote2025.github.io/zyxrss.github.io",
+  "feed_path": "feed.xml",
+  "cover_image": "cover.jpg",
+  "language": "zh-cn",
+  "entry_prefix": "issue"
+}

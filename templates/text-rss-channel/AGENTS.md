@@ -29,17 +29,20 @@ Replace all placeholders:
 
 - `index.html`
 - `feed.xml`
+- `channel.json`
+- `update.py`
 - `cover.jpg`
 - `posts/<post-slug>.html`
 
 ## Update Workflow
 
 When adding a new post:
-1. Create a new article page under `posts/`.
-2. Add a new item to `feed.xml`.
-3. Add a new entry card or summary block to `index.html`.
-4. Keep the newest item first in both `feed.xml` and `index.html`.
-5. Keep `link` and `guid` pointed at the real post page URL.
+1. Prefer running `python update.py --title ... --summary ...`.
+2. Create a new article page under `posts/` if you are not using the wrapper.
+3. Add a new item to `feed.xml`.
+4. Add a new entry card or summary block to `index.html`.
+5. Keep the newest item first in both `feed.xml` and `index.html`.
+6. Keep `link` and `guid` pointed at the real post page URL.
 
 ## Validation
 

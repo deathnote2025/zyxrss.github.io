@@ -1,0 +1,15 @@
+{
+  "type": "audio",
+  "slug": "{{CHANNEL_SLUG}}",
+  "channel_title": "{{CHANNEL_TITLE}}",
+  "channel_description": "{{CHANNEL_DESCRIPTION}}",
+  "base_url": "https://deathnote2025.github.io/zyxrss.github.io",
+  "feed_path": "feed.xml",
+  "apple_feed_path": "",
+  "cover_image": "cover.jpg",
+  "language": "zh-cn",
+  "entry_prefix": "episode",
+  "author": "{{CHANNEL_TITLE}}",
+  "category": "Technology",
+  "explicit": false
+}

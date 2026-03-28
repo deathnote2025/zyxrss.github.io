@@ -26,6 +26,7 @@ This file governs AI work for the whole repository.
 ## Where To Start
 
 - Prefer using `scripts/init_channel.sh` to initialize new channels from templates.
+- If a channel already has `update.py`, prefer using that wrapper instead of calling the shared engine by hand.
 - For a new text channel, copy `templates/text-rss-channel/` into `feeds/<channel-slug>/`.
 - For a new audio channel, copy `templates/audio-rss-channel/` into `feeds/<channel-slug>/`.
 - After copying, replace every placeholder token before publishing.
@@ -108,19 +109,21 @@ This file governs AI work for the whole repository.
 
 ## Required Updates For Existing Text Channels
 
-1. Add a new article page under `posts/`.
-2. Add a new item to `feed.xml`.
-3. Add the new item to the channel `index.html`.
-4. Keep item links and `guid` values pointed at the real article page, not the channel home page.
-5. Keep items in reverse chronological order.
+1. Prefer running `feeds/<channel-slug>/update.py` when the channel has already adopted the script-managed pattern.
+2. Add a new article page under `posts/`.
+3. Add a new item to `feed.xml`.
+4. Add the new item to the channel `index.html`.
+5. Keep item links and `guid` values pointed at the real article page, not the channel home page.
+6. Keep items in reverse chronological order.
 
 ## Required Updates For Existing Audio Channels
 
-1. Add the media file under `audio/`.
-2. Add a new item to `feed.xml`.
-3. Add the new episode entry to the channel `index.html`.
-4. Keep `enclosure` `url`, `length`, `type`, and `itunes:duration` in sync with the real media file and artwork choice.
-5. Prefer `MP3` or `AAC` for podcast media.
+1. Prefer running `feeds/<channel-slug>/update.py` when the channel has already adopted the script-managed pattern.
+2. Add the media file under `audio/`.
+3. Add a new item to `feed.xml`.
+4. Add the new episode entry to the channel `index.html`.
+5. Keep `enclosure` `url`, `length`, `type`, and `itunes:duration` in sync with the real media file and artwork choice.
+6. Prefer `MP3` or `AAC` for podcast media.
 
 ## Apple Podcasts Constraints
 
