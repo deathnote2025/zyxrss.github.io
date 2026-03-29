@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-     xmlns:atom="http://www.w3.org/2005/Atom"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
     <title>doublea</title>
     <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
@@ -13,7 +10,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education" />
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 28 Mar 2026 09:05:09 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2026 00:21:46 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/apple-feed.xml" rel="self" type="application/rss+xml" />
     <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
     <image>
@@ -22,49 +19,40 @@
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
     </image>
     <item>
+      <title>Sora 关停真相：算力、增长与合规的三重夹击</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-003-sora-compute-growth-compliance.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-003-sora-compute-growth-compliance.html</guid>
+      <pubDate>Mon, 30 Mar 2026 00:21:46 +0800</pubDate>
+      <description>这期围绕 Sora 消费级产品线收缩的真实时间线展开，梳理 2026-03-13、2026-03-19、2026-03-24 三个关键节点，并分析算力成本、增长冷却与合规压力为何共同把独立 Sora app 推向终点。</description>
+      <itunes:duration>10:24</itunes:duration>
+      <itunes:episode>3</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-003-sora-compute-growth-compliance.mp3" length="2504962" type="audio/mpeg" />
+    </item>
+    <item>
       <title>用代币制激发自驱力</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-002-token-economy-self-drive.html</link>
       <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-002-token-economy-self-drive.html</guid>
       <pubDate>Sat, 28 Mar 2026 09:05:09 +0800</pubDate>
-      <description><![CDATA[
-        <p>这期从代币制的系统设计切入，讨论为什么它能起作用、为什么“明码标价”会破坏内在动机，以及怎样把外部奖励过渡到更稳定的自律。</p>
-        <ul>
-          <li>为什么代币制像 RPG 的经验值系统，能把抽象好行为即时可视化</li>
-          <li>为什么不能把所有行为都做成价格表，否则系统会滑向纯控制</li>
-          <li>为什么要把代币从控制性反馈，转成信息性反馈</li>
-          <li>为什么常规代币制只能覆盖大部分需求，剩下的要分层干预</li>
-          <li>为什么退出阶段必须大量注入社会性奖励，才能走向内在自律</li>
-        </ul>
-      ]]></description>
+      <description>这期从代币制的系统设计切入，讨论为什么它能起作用、为什么“明码标价”会破坏内在动机，以及怎样把外部奖励过渡到更稳定的自律。</description>
       <itunes:duration>13:32</itunes:duration>
       <itunes:episode>2</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-002-token-economy-self-drive.mp3"
-                 length="3254773"
-                 type="audio/mpeg" />
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-002-token-economy-self-drive.mp3" length="3254773" type="audio/mpeg" />
     </item>
     <item>
       <title>设计有效的奖励：从斯金纳到自律</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-001-design-effective-rewards.html</link>
       <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-001-design-effective-rewards.html</guid>
       <pubDate>Fri, 27 Mar 2026 21:22:17 +0800</pubDate>
-      <description><![CDATA[
-        <p>这期从德西效应、斯金纳强化理论与自我决定理论出发，讨论如何让奖励从交易工具变成帮助孩子建立内在秩序的脚手架。</p>
-        <ul>
-          <li>为什么不当奖励会破坏原本存在的学习意愿</li>
-          <li>为什么“变比率强化”更容易维持积极性</li>
-          <li>如何通过自主感、胜任感、归属感培养自驱力</li>
-          <li>为什么应该更多奖励过程，而不是只盯结果</li>
-        </ul>
-      ]]></description>
+      <description>这期从德西效应、斯金纳强化理论与自我决定理论出发，讨论如何让奖励从交易工具变成帮助孩子建立内在秩序的脚手架。</description>
       <itunes:duration>07:29</itunes:duration>
       <itunes:episode>1</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-001-design-effective-rewards.mp3"
-                 length="1911656"
-                 type="audio/mpeg" />
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-001-design-effective-rewards.mp3" length="1911656" type="audio/mpeg" />
     </item>
   </channel>
 </rss>
