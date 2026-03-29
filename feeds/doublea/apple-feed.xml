@@ -10,7 +10,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education" />
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Mar 2026 00:21:46 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2026 00:40:34 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/apple-feed.xml" rel="self" type="application/rss+xml" />
     <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
     <image>
@@ -18,6 +18,18 @@
       <title>doublea</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
     </image>
+    <item>
+      <title>决策树算法核心：熵与信息增益</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-004-decision-tree-entropy-information-gain.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-004-decision-tree-entropy-information-gain.html</guid>
+      <pubDate>Mon, 30 Mar 2026 00:40:34 +0800</pubDate>
+      <description>这期用红豆绿豆和挑西瓜的生活化比喻，讲清决策树算法里最核心的两个概念：什么是熵，以及算法为什么会用信息增益来挑出最值得先问的那个问题。</description>
+      <itunes:duration>13:10</itunes:duration>
+      <itunes:episode>4</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-004-decision-tree-entropy-information-gain.mp3" length="3168681" type="audio/mpeg" />
+    </item>
     <item>
       <title>Sora 关停真相：算力、增长与合规的三重夹击</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-003-sora-compute-growth-compliance.html</link>

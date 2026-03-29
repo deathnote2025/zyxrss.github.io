@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>决策树算法核心：熵与信息增益 | doublea</title>
+  <style>
+    :root {
+      --bg: #f9f2e8;
+      --card: rgba(255, 255, 255, 0.9);
+      --line: rgba(31, 41, 55, 0.12);
+      --text: #172030;
+      --muted: #5c6777;
+      --accent: #b45309;
+      --accent-dark: #8a3900;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 16px 44px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(180, 83, 9, 0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(2, 132, 199, 0.12), transparent 24%),
+        linear-gradient(180deg, #fcf8f3 0%, #efe4d6 100%);
+      font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    main {
+      width: min(920px, 100%);
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: 0 24px 80px rgba(31, 41, 55, 0.12);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .meta,
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .pill,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 249, 242, 0.92);
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .button {
+      padding: 12px 16px;
+      background: var(--accent);
+      color: #fff8f1;
+      font-weight: 700;
+    }
+
+    .button.alt {
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .section {
+      margin-top: 26px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 1.18rem;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    ul,
+    ol {
+      margin: 14px 0 0;
+      padding-left: 22px;
+    }
+
+    blockquote {
+      margin: 16px 0 0;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 18px 18px 0;
+      background: rgba(255, 248, 240, 0.92);
+      color: var(--text);
+    }
+
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">doublea Episode 4</p>
+    <h1>决策树算法核心：熵与信息增益</h1>
+    <p>这期用红豆绿豆和挑西瓜的生活化比喻，讲清决策树算法里最核心的两个概念：什么是熵，以及算法为什么会用信息增益来挑出最值得先问的那个问题。</p>
+
+    <div class="meta">
+      <span class="pill">发布日期：2026-03-30</span>
+      <span class="pill">时长：13:10</span>
+      <span class="pill">频道：doublea</span>
+    </div>
+
+    <div class="actions">
+      <a class="button" href="../audio/episode-004-decision-tree-entropy-information-gain.mp3">播放 MP3</a>
+      <a class="button alt" href="../apple-feed.xml">打开 RSS</a>
+      <a class="button alt" href="../">返回频道页</a>
+    </div>
+
+    <section class="section">
+      <h2>本期音频</h2>
+      <audio controls preload="none">
+        <source src="../audio/episode-004-decision-tree-entropy-information-gain.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+
+    <section class="section">
+      <h2>本期内容</h2>
+      <p>欢迎收听本期播客。今天我们用最通俗的语言，拆开人工智能里两个听起来很高深、其实非常适合用生活场景理解的概念：熵与决策树算法。整期不讲复杂公式，只讲你能立刻脑补出来的画面。</p>
+<p>这期你会听到什么</p>
+<ol>
+<li>秒懂什么是熵</li>
+</ol>
+<p>想象你的面前有一口锅，里面混着红豆和绿豆。豆子越杂、越分不清，说明越混乱。在机器学习里，熵就是用来衡量这种混乱度和不确定性的指标。豆子混得越厉害，熵越高；如果锅里只剩下一种颜色，数据已经非常纯净，熵就接近零。</p>
+<ol>
+<li>决策树的核心：寻找最好用的筛子</li>
+</ol>
+<p>决策树像一个特别会提问的人。面对一堆混乱数据，它一直在想：我应该先问哪个问题，最能把局面理清楚？这就像你想把一锅混在一起的豆子迅速分开，需要先找到一个最好用的筛子。一个好筛子筛下去，左边几乎都是红豆，右边几乎都是绿豆，分类一下子就清楚了。</p>
+<ol>
+<li>信息增益到底在算什么</li>
+</ol>
+<p>我们再换成更日常的例子，比如挑西瓜。到底是先看颜色，还是先看瓜蒂形状？决策树在挑选特征时，算的就是这笔账：哪个特征切一刀下去，能让当前的不确定性下降最多。这个下降的幅度，就叫信息增益。信息增益越大，说明这个问题越值得先问。</p>
+<ol>
+<li>听懂算法在做什么</li>
+</ol>
+<p>如果你之前总觉得机器学习像黑箱，这期的重点就是把它拉回到生活常识里：机器并不是神秘地“想明白了”，而是在一层层比较，看看哪一步最能减少混乱、最能帮助分类。</p>
+<p>适合谁听</p>
+<ul>
+<li>对人工智能好奇，但没有算法基础的人</li><li>想理解决策树为什么能做分类判断的人</li><li>希望用生活化比喻理解机器学习核心概念的人</li>
+</ul>
+<p>听完这期，你会更容易理解机器是怎么像人一样，从一团混乱中慢慢理出头绪、找到破局关键的。</p>
+    </section>
+  </main>
+</body>
+</html>
