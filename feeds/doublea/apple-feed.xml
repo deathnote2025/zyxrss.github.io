@@ -10,7 +10,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education" />
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Mar 2026 00:40:34 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2026 23:01:51 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/apple-feed.xml" rel="self" type="application/rss+xml" />
     <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
     <image>
@@ -18,6 +18,18 @@
       <title>doublea</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
     </image>
+    <item>
+      <title>可口可乐：从成瘾药水到三千亿帝国</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-005-coca-cola-drug-to-300-billion-empire.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-005-coca-cola-drug-to-300-billion-empire.html</guid>
+      <pubDate>Mon, 30 Mar 2026 23:01:51 +0800</pubDate>
+      <description>这期沿着可口可乐 140 年的荒诞商业时间线，拆开它如何从含可卡因的“专利药”一步步变成市值超过 3000 亿美元的全球消费帝国。</description>
+      <itunes:duration>14:29</itunes:duration>
+      <itunes:episode>5</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-005-coca-cola-drug-to-300-billion-empire.mp3" length="3483019" type="audio/mpeg" />
+    </item>
     <item>
       <title>决策树算法核心：熵与信息增益</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-004-decision-tree-entropy-information-gain.html</link>
