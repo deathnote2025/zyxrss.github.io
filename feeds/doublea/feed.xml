@@ -10,7 +10,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education" />
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Mar 2026 23:01:51 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 00:09:32 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
     <image>
@@ -18,6 +18,18 @@
       <title>doublea</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
     </image>
+    <item>
+      <title>《头脑特工队》：完整胜过完美的成长真相</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-006-inside-out-wholeness-over-perfection.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-006-inside-out-wholeness-over-perfection.html</guid>
+      <pubDate>Tue, 31 Mar 2026 00:09:32 +0800</pubDate>
+      <description>这期借《头脑特工队 1&amp;2》的情绪世界，拆解青春期自我瓦解与重建的心理隐喻，聊聊为什么成长不是变得完美，而是学会变得完整。</description>
+      <itunes:duration>21:36</itunes:duration>
+      <itunes:episode>6</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-006-inside-out-wholeness-over-perfection.mp3" length="5194032" type="audio/mpeg" />
+    </item>
     <item>
       <title>可口可乐：从成瘾药水到三千亿帝国</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-005-coca-cola-drug-to-300-billion-empire.html</link>
