@@ -10,7 +10,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education" />
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 31 Mar 2026 00:09:32 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 08:59:31 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
     <image>
@@ -18,6 +18,18 @@
       <title>doublea</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
     </image>
+    <item>
+      <title>AI 竞争新赛点：从“会聊天”到“会干活”，企业如何布局 Agent 底座？</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-007-agent-execution-enterprise-foundation.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-007-agent-execution-enterprise-foundation.html</guid>
+      <pubDate>Thu, 02 Apr 2026 08:59:31 +0800</pubDate>
+      <description>这期面向企业管理者，解释企业 AI 竞争为何正从“模型会回答”转向“Agent 能稳定执行”，并拆解 Context Engineering、Harness Engineering 与企业级 Agent 底座的投资重点。</description>
+      <itunes:duration>18:19</itunes:duration>
+      <itunes:episode>7</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-007-agent-execution-enterprise-foundation.mp3" length="4403260" type="audio/mpeg" />
+    </item>
     <item>
       <title>《头脑特工队》：完整胜过完美的成长真相</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-006-inside-out-wholeness-over-perfection.html</link>
