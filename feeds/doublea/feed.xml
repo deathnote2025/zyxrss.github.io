@@ -10,7 +10,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education" />
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 02 Apr 2026 08:59:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2026 22:14:56 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
     <image>
@@ -18,6 +18,18 @@
       <title>doublea</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
     </image>
+    <item>
+      <title>当婚姻撕破脸：房产加名错觉、出轨追债与《民法典》的硬核逻辑</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-008-divorce-law-house-name-affair-debt-civil-code.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-008-divorce-law-house-name-affair-debt-civil-code.html</guid>
+      <pubDate>Fri, 03 Apr 2026 22:14:56 +0800</pubDate>
+      <description>这期围绕离婚里的几场高频硬仗，拆开房产加名为什么不等于平分、出轨转账为何还能追回，以及法律如何在孩子、金钱和公平之间划出底线。</description>
+      <itunes:duration>20:42</itunes:duration>
+      <itunes:episode>8</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-008-divorce-law-house-name-affair-debt-civil-code.mp3" length="4976909" type="audio/mpeg" />
+    </item>
     <item>
       <title>AI 竞争新赛点：从“会聊天”到“会干活”，企业如何布局 Agent 底座？</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-007-agent-execution-enterprise-foundation.html</link>
