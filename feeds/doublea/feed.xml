@@ -10,7 +10,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education" />
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Apr 2026 22:14:56 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2026 17:34:19 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
     <image>
@@ -18,6 +18,18 @@
       <title>doublea</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
     </image>
+    <item>
+      <title>温州悖论：被误解的“老板之城”与它的千年硬核灵魂</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-009-wenzhou-paradox-merchant-city-math-soul.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-009-wenzhou-paradox-merchant-city-math-soul.html</guid>
+      <pubDate>Sat, 04 Apr 2026 17:34:19 +0800</pubDate>
+      <description>这期从朔门古港、数学家之乡、永嘉学派到全球温商网络，拆开温州为什么既是商业重镇，又是一座底蕴深厚的智力与文化之城。</description>
+      <itunes:duration>18:47</itunes:duration>
+      <itunes:episode>9</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-009-wenzhou-paradox-merchant-city-math-soul.mp3" length="4518513" type="audio/mpeg" />
+    </item>
     <item>
       <title>当婚姻撕破脸：房产加名错觉、出轨追债与《民法典》的硬核逻辑</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-008-divorce-law-house-name-affair-debt-civil-code.html</link>
