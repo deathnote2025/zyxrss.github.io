@@ -10,7 +10,7 @@
     <itunes:explicit>false</itunes:explicit>
     <itunes:category text="Education" />
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Apr 2026 17:26:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 17:34:44 +0800</lastBuildDate>
     <atom:link href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/apple-feed.xml" rel="self" type="application/rss+xml" />
     <itunes:image href="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/cover-20260327.jpg" />
     <image>
@@ -18,6 +18,18 @@
       <title>doublea</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/</link>
     </image>
+    <item>
+      <title>思维框架-职场防甩锅的硬核思维模型</title>
+      <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-014-thinking-frameworks-workplace-anti-blame.html</link>
+      <guid>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-014-thinking-frameworks-workplace-anti-blame.html</guid>
+      <pubDate>Mon, 13 Apr 2026 17:34:44 +0800</pubDate>
+      <description>这期把 SCQA、金字塔原理、5W2H、5 Whys、优先级矩阵和系统性思维串成一套打工人能直接上手的防背锅框架库，讨论如何少瞎忙、少背锅、多一点主动权。</description>
+      <itunes:duration>22:12</itunes:duration>
+      <itunes:episode>14</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/audio/episode-014-thinking-frameworks-workplace-anti-blame.mp3" length="5337190" type="audio/mpeg" />
+    </item>
     <item>
       <title>批判性思维-谁在黑你的大脑系统</title>
       <link>https://deathnote2025.github.io/zyxrss.github.io/feeds/doublea/episodes/episode-013-critical-thinking-brain-hack.html</link>
